@@ -10,7 +10,7 @@ jobs:
 
       - name: Instal·lar dependències i construir
         run: |
-          cd ${{ github.workspace }}
+          cd ./my-project/
           npm ci  # o npm install
           npm run build
 
