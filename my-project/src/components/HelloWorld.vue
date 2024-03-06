@@ -4,7 +4,7 @@
       <button v-for="number in numbers" @click="verNumeroClicat(number)" :key="number">{{ number }}</button>
     </div>
     <div v-if="numClicat !== null">
-      <p>Has clicado en el número: {{ numClicat }}</p>
+      <p>Has clicado en el número:  {{ numClicat }}</p>
     </div>
   </div>
 </template>
