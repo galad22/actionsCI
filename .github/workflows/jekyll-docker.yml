@@ -11,7 +11,7 @@ jobs:
       - name: Instal·lar dependències i construir
         run: |
           cd ./my-project/
-          npm ci  # o npm install
+          npm install
           npm run build
 
       - name: scp a produccio
@@ -21,6 +21,6 @@ jobs:
           cd ${{ github.workspace }}
           echo "Action desplegant a produccio" > ./web/last_deploy.txt
           date >> ./web/last_deploy.txt
-          scp -r -o stricthostkeychecking=no -o UserKnownHostsFile=/dev/null -i "~/prod_key.pem" ./dist/* ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }}:/home/a19galdelred/web/actions2.a19galdelred.daw.inspedralbes.cat/public_html/
+          scp -r -o stricthostkeychecking=no -o UserKnownHostsFile=/dev/null -i "~/prod_key.pem" ./my-project/dist/* ${{ secrets.PROD_USER }}@${{ secrets.PROD_HOST }}:/home/a19galdelred/web/actions2.a19galdelred.daw.inspedralbes.cat/public_html/web/
           
       - run: echo "🍏 This job's status is ${{ job.status }}."
